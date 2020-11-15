@@ -1,0 +1,62 @@
+The English Wikipedia is the English-language edition of the free online encyclopedia Wikipedia. Founded on 15 January 2001, it is the first edition of Wikipedia and, as of November 2020, has the most articles of any edition.[2] As of November 2020, 11% of articles in all Wikipedias belong to the English-language edition. This share has gradually declined from more than 50 percent in 2003, due to the growth of Wikipedias in other languages.[3] As of 15 November 2020, there are 6,190,557 articles on the site,[4] having surpassed the 6 million mark on 23 January 2020.[5] In August 2019, the total volume of the compressed texts of the English Wikipedia's articles amounted to 16.1 gigabytes.[6]
+
+The Simple English Wikipedia (simplewiki) is a variation in which most articles use only basic English vocabulary. There is also the Old English (Ænglisc/Anglo-Saxon) Wikipedia (angwiki), and a test incubator version for the Middle English Wikipedia (enmwiki). Community-produced news publications include The Signpost.[7]
+
+
+Contents
+1	Pioneering edition
+2	Users and editors
+3	Wikipedians
+3.1	Arbitration committee
+4	Controversies
+4.1	English varieties
+4.2	Disputed articles
+4.3	Threats against high schools
+5	Wikiprojects, and assessments of articles' importance and quality
+6	Graphics
+7	Internal news publications
+8	See also
+9	Footnotes
+10	References
+11	External links
+Pioneering edition
+See also: Wikipedia:Milestones
+The English Wikipedia was the first Wikipedia edition and has remained the largest. It has pioneered many ideas as conventions, policies or features which were later adopted by Wikipedia editions in some of the other languages. These ideas include "featured articles",[8] the neutral-point-of-view policy,[9] navigation templates,[10] the sorting of short "stub" articles into sub-categories,[11] dispute resolution mechanisms such as mediation and arbitration,[12] and weekly collaborations.[13]
+
+The English Wikipedia has adopted features from Wikipedias in other languages. These features include verified revisions from the German Wikipedia and town population-lookup templates from the Dutch Wikipedia.
+
+Although the English Wikipedia stores images and audio files, as well as text files, many of the images have been moved to Wikimedia Commons with the same name, as passed-through files. However, the English Wikipedia also has fair-use images and audio/video files (with copyright restrictions), most of which are not allowed on Commons.
+
+Many of the most active participants in the Wikimedia Foundation, and the developers of the MediaWiki software that powers Wikipedia, are English users.
+
+Users and editors
+
+Steven Pruitt, as of January 2020, has made more edits on the English Wikipedia than any other editor
+English Wikipedia statistics
+Number of user accounts	Number of articles	Number of files	Number of administrators
+40,311,283	6,190,557	891,671	1,123
+Wikipedians
+The English Wikipedia reached 4,000,000 registered user accounts on 1 April 2007,[14] just a little over a year since the millionth Wikipedian registered an account in late February 2006.[15]
+
+Over 1,100,000 editors have edited Wikipedia more than 10 times.[16] Over 30,000 editors perform more than 5 edits per month, and a little over 3,000 perform more than 100 edits per month.[17] By 24 November 2011, a total of 500 million edits had been performed on the English Wikipedia.[citation needed]
+
+As the largest Wikipedia edition, and because English is such a widely used language, the English Wikipedia draws many users and editors whose native language is not English. Such users may seek information from the English Wikipedia rather than the Wikipedia of their native language because the English Wikipedia tends to contain more information about general subjects. Often bringing in new perspectives, a strong motivation to contribute for them is to increase the coverage of topics outside the English world for an international audience and to enrich existing topics with missing information from non-English countries, thereby helping to reduce systemic bias. Successful collaborations have been developed between non-native English speakers who successfully add content to the English Wikipedia and native English speakers who act as copyeditors for them.[citation needed]
+
+Arbitration committee
+Main article: Arbitration Committee
+The English Wikipedia has an arbitration committee (also known as ArbCom) that consists of a panel of editors that imposes binding rulings with regard to disputes between other editors of the online encyclopedia.[18] The committee was created by Jimmy Wales on 4 December 2003 as an extension of the decision-making power he had formerly held as owner of the site.[19][20]
+When initially founded, the committee consisted of 12 arbitrators divided into three groups of four members each.[19][21] Since then, the committee has gradually expanded its membership to 18 arbitrators.[22][failed verification]
+
+As with other aspects of the English Wikipedia, some of Wikipedia's sister projects have emulated the arbitration committee with their own similar versions.[23] For instance, in 2007, an arbitration committee was founded on the German Wikipedia called the Schiedsgericht [de].[24]
+
+Controversies
+One controversy in the English Wikipedia concerns which national variety of the English language is to be preferred, with the most commonly advocated candidates being American English and British English.[25] Perennial suggestions range from standardizing upon a single form of English to forking the English Wikipedia project. A style guideline states, "the English Wikipedia has no general preference for a major national variety of the language" and "an article on a topic that has strong ties to a particular English-speaking nation uses the appropriate variety of English for that nation".[26] An article should use spelling and grammar variants consistently; for example, color and colour are not to be used in the same article, since they represent American and British English, respectively. The guide also states that an article must remain in its original national variant.
+
+There has been a similar issue in the Chinese-language Wikipedia concerning regional differences in writing. Efforts toward a language fork for Portuguese Wikipedia have failed, but those regarding Norwegian Wikipedia succeeded.
+
+Andrew Lih wrote that the English Wikipedia "didn't have the chance to go through a debate over whether there should be a British English Wikipedia or an American English Wikipedia" because the English Wikipedia was the original edition.[27][clarification needed] Editors agreed to use U.S. spellings for primarily American topics and British spellings for primarily British topics. In 2009 Lih wrote, "No doubt, American spellings tend to dominate by default just because of sheer numbers."[28]
+
+Disputed articles
+A 2013 study from Oxford University concluded that the most disputed articles on the English Wikipedia tended to be broader issues, while on other language Wikipedias the most disputed articles tended to be regional issues; this is due to the English language's status as a global lingua franca, which means that many who edit the English Wikipedia do not speak English as a native language.[clarification needed] The study stated that the most disputed entries on the English Wikipedia were: George W. Bush, anarchism, Muhammad, list of WWE personnel, global warming, circumcision, United States, Jesus, race and intelligence, and Christianity.[29]
+
+Threats against high schools

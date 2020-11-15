@@ -1,0 +1,135 @@
+Serializing data¶
+At the highest level, you can serialize data like this:
+
+from django.core import serializers
+data = serializers.serialize("xml", SomeModel.objects.all())
+The arguments to the serialize function are the format to serialize the data to (see Serialization formats) and a QuerySet to serialize. (Actually, the second argument can be any iterator that yields Django model instances, but it’ll almost always be a QuerySet).
+
+django.core.serializers.get_serializer(format)¶
+You can also use a serializer object directly:
+
+XMLSerializer = serializers.get_serializer("xml")
+xml_serializer = XMLSerializer()
+xml_serializer.serialize(queryset)
+data = xml_serializer.getvalue()
+This is useful if you want to serialize data directly to a file-like object (which includes an HttpResponse):
+
+with open("file.xml", "w") as out:
+    xml_serializer.serialize(SomeModel.objects.all(), stream=out)
+Informacja
+
+Calling get_serializer() with an unknown format will raise a django.core.serializers.SerializerDoesNotExist exception.
+
+Subset of fields¶
+If you only want a subset of fields to be serialized, you can specify a fields argument to the serializer:
+
+from django.core import serializers
+data = serializers.serialize('xml', SomeModel.objects.all(), fields=('name','size'))
+In this example, only the name and size attributes of each model will be serialized. The primary key is always serialized as the pk element in the resulting output; it never appears in the fields part.
+
+Informacja
+
+Depending on your model, you may find that it is not possible to deserialize a model that only serializes a subset of its fields. If a serialized object doesn’t specify all the fields that are required by a model, the deserializer will not be able to save deserialized instances.
+
+Inherited models¶
+If you have a model that is defined using an abstract base class, you don’t have to do anything special to serialize that model. Call the serializer on the object (or objects) that you want to serialize, and the output will be a complete representation of the serialized object.
+
+However, if you have a model that uses multi-table inheritance, you also need to serialize all of the base classes for the model. This is because only the fields that are locally defined on the model will be serialized. For example, consider the following models:
+
+class Place(models.Model):
+    name = models.CharField(max_length=50)
+
+class Restaurant(Place):
+    serves_hot_dogs = models.BooleanField(default=False)
+If you only serialize the Restaurant model:
+
+data = serializers.serialize('xml', Restaurant.objects.all())
+the fields on the serialized output will only contain the serves_hot_dogs attribute. The name attribute of the base class will be ignored.
+
+In order to fully serialize your Restaurant instances, you will need to serialize the Place models as well:
+
+all_objects = [*Restaurant.objects.all(), *Place.objects.all()]
+data = serializers.serialize('xml', all_objects)
+Deserializing data¶
+Deserializing data is very similar to serializing it:
+
+for obj in serializers.deserialize("xml", data):
+    do_something_with(obj)
+As you can see, the deserialize function takes the same format argument as serialize, a string or stream of data, and returns an iterator.
+
+However, here it gets slightly complicated. The objects returned by the deserialize iterator aren’t regular Django objects. Instead, they are special DeserializedObject instances that wrap a created – but unsaved – object and any associated relationship data.
+
+Calling DeserializedObject.save() saves the object to the database.
+
+Informacja
+
+If the pk attribute in the serialized data doesn’t exist or is null, a new instance will be saved to the database.
+
+This ensures that deserializing is a non-destructive operation even if the data in your serialized representation doesn’t match what’s currently in the database. Usually, working with these DeserializedObject instances looks something like:
+
+for deserialized_object in serializers.deserialize("xml", data):
+    if object_should_be_saved(deserialized_object):
+        deserialized_object.save()
+In other words, the usual use is to examine the deserialized objects to make sure that they are „appropriate” for saving before doing so. If you trust your data source you can instead save the object directly and move on.
+
+The Django object itself can be inspected as deserialized_object.object. If fields in the serialized data do not exist on a model, a DeserializationError will be raised unless the ignorenonexistent argument is passed in as True:
+
+serializers.deserialize("xml", data, ignorenonexistent=True)
+Serialization formats¶
+Django supports a number of serialization formats, some of which require you to install third-party Python modules:
+
+Identifier	Information
+xml	Serializes to and from a simple XML dialect.
+json	Serializes to and from JSON.
+yaml	Serializes to YAML (YAML Ain’t a Markup Language). This serializer is only available if PyYAML is installed.
+XML¶
+The basic XML serialization format looks like this:
+
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object pk="123" model="sessions.session">
+        <field type="DateTimeField" name="expire_date">2013-01-16T08:16:59.844560+00:00</field>
+        <!-- ... -->
+    </object>
+</django-objects>
+The whole collection of objects that is either serialized or deserialized is represented by a <django-objects>-tag which contains multiple <object>-elements. Each such object has two attributes: „pk” and „model”, the latter being represented by the name of the app („sessions”) and the lowercase name of the model („session”) separated by a dot.
+
+Each field of the object is serialized as a <field>-element sporting the fields „type” and „name”. The text content of the element represents the value that should be stored.
+
+Foreign keys and other relational fields are treated a little bit differently:
+
+<object pk="27" model="auth.permission">
+    <!-- ... -->
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">9</field>
+    <!-- ... -->
+</object>
+In this example we specify that the auth.Permission object with the PK 27 has a foreign key to the contenttypes.ContentType instance with the PK 9.
+
+ManyToMany-relations are exported for the model that binds them. For instance, the auth.User model has such a relation to the auth.Permission model:
+
+<object pk="1" model="auth.user">
+    <!-- ... -->
+    <field to="auth.permission" name="user_permissions" rel="ManyToManyRel">
+        <object pk="46"></object>
+        <object pk="47"></object>
+    </field>
+</object>
+This example links the given user with the permission models with PKs 46 and 47.
+
+Control characters
+
+If the content to be serialized contains control characters that are not accepted in the XML 1.0 standard, the serialization will fail with a ValueError exception. Read also the W3C’s explanation of HTML, XHTML, XML and Control Codes.
+
+JSON¶
+When staying with the same example data as before it would be serialized as JSON in the following way:
+
+[
+    {
+        "pk": "4b678b301dfd8a4e0dad910de3ae245b",
+        "model": "sessions.session",
+        "fields": {
+            "expire_date": "2013-01-16T08:16:59.844Z",
+            ...
+        }
+    }
+]
