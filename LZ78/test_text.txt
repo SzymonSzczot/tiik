@@ -1,0 +1,224 @@
+open source communities. Frontend-focused web frameworks such as Angular.js, Em‐
+ber.js, and Backbone.js have come out of the JavaScript community and become fore‐
+runners in modern web development. Where does Django fit into all of this? How can
+we integrate these client-side MVC frameworks into our current Django infrastructure?
+Lightweight Django teaches you how to take advantage of Django’s Pythonic “batteries
+included” philosophy. Its aim is to guide you through misconceptions that Django is
+too “heavy” for rapid application development. From creating the world’s smallest
+Django application to building a RESTful API, Lightweight Djangowill walk you through
+how to take advantage of this popular Python web framework.
+Why This Book?
+We wanted to write this book primarily because we love Django. The community is
+amazing, and there are so many resources to learn about Django and to develop appli‐
+cations using it. However, we also felt like many of these resources, including the official
+Django documentation, put too much emphasis on the power of Django and not on its
+decoupled design. Django is a well-written framework, with numerous utilities for
+building web applications included. What we want this book to highlight is how you
+can break apart and potentially replace these components to pick and choose what best
+suits the application you want to build. Similarly, we wanted to break down the typical
+structure of Django projects and applications. Our goal is to get you to stop asking “how
+do I do X in Django?” and instead ask “does Django provide anything to help me do X,
+and if not, is something available in the community?”
+In addition, we wanted to answer questions about where Django fits in a Web in which
+more applications are built with heavy client-side interactions and real-time compo‐
+nents, and paired with native mobile applications. As a framework, Django is agnostic
+about the client, which leaves some users feeling like Django doesn’t have an answer for
+building these types of applications. We hope that this book can help shape how the
+community approaches these types of problems. We want to see Django and its com‐
+munity continue to grow, and we want to be a part of it for many more years to come.
+Who Should Read This Book?
+If you are interested in reading this book, you are most likely an intermediate Django
+user. You’ve gone through the Django polls tutorial, as well as written a few basic
+Django web applications, and are now wondering what the next steps are. Lightweight
+Django serves as that next step to help outline how to utilize Django’s utilities and
+simplicity.
+Or you might be currently working on a Django project and wondering how to integrate
+something like Backbone.js into your project. Lightweight Django will teach you some
+best practices for integration and will give you a jumping-off point for building content-
+rich web applications.
+Who Should Not Read This Book?
+While we feel that Lightweight Django is beneficial to developers from many back‐
+grounds, there might be certain people who won’t find this book interesting. For those
+of you who do not find writing Python and/or JavaScript pleasurable, this book is most
+likely not for you. All of the concepts and examples revolve around these languages,
+and they will be heavily used throughout each chapter. We also don’t recommend this
+book for those who are brand new to Django.
+About the Examples
+Each of the example projects has been carefully crafted under the theme of rapid ap‐
+plication development. In each chapter, you’ll learn how to build projects that assist
+with project management, tools, and team collaboration. We wanted our readers to build
+projects that they find useful and can customize for their own use. In general, if example
+code is offered with this book, you may use it in your programs and documentation.
+You do not need to contact us for permission unless you’re reproducing a significant
+portion of the code. For example, writing a program that uses several chunks of code
+from this book does not require permission. Selling or distributing a CD-ROM of ex‐
+amples from O’Reilly books does require permission. Answering a question by citing
+this book and quoting example code does not require permission. Incorporating a sig‐
+nificant amount of example code from this book into your product’s documentation
+does require permission.
+The code samples for this title can be found here: https://github.com/lightweightdjango/
+examples.
+We appreciate, but do not require, attribution. An attribution usually includes the title,
+author, publisher, and ISBN. For example: “Lightweight Django by Julia Elman and Mark
+Lavin (O’Reilly). Copyright 2015 Julia Elman and Mark Lavin, 978-1-491-94594-0.”
+If you feel your use of code examples falls outside fair use or the permission given above,
+feel free to contact us at permissions@oreilly.com.
+Organization of This Book
+Chapter 1, The World’s Smallest Django Project
+Creating lightweight and simple web applications is the core concept in this book.
+In this chapter, you’ll be building a runnable, single-file “Hello World” Django
+application.
+Chapter 2, Stateless Web Application
+Ever wonder how placeholder image services are created? Chapter 2 walks you
+through how to build a stateless web application to generate placeholder image
+URLs.
+Chapter 3, Building a Static Site Generator
+Rapid prototyping is a useful technique for creating and scaffolding web applica‐
+tions. We’ll review the purposes of this technique by creating a static site generator
+to help scaffold your team’s project.
+Chapter 4, Building a REST API
+REST APIs are an important part of creating web applications with rich and relevant
+content. This is the chapter in which we start building out a large-scale Scrum board
+application by using the django-rest-framework.
+Chapter 5, Client-Side Django with Backbone.js
+Chapter 5 continues with what we built in Chapter 4 by walking you through cre‐
+ating a Backbone.js application that works with our newly made RESTful API. We’ll
+touch on each component that creates a new Backbone application and how to sync
+up this client-side framework with Django.
+Chapter 6, Single-Page Web Application
+Single-page web applications are a way in which we can create enriching client-side
+web applications. In this chapter we’ll return to our simple Backbone application
+and continue our progress by making it a robust single-page application.
+Chapter 7, Real-Time Django
+Creating web applications that respond to interactions in real time provides instant
+gratification for our users. To complete our project from the previous two chapters,
+we’ll add a real-time component to our Scrum board using websockets and Tornado,
+an asynchronous networking library written in Python.
+Conventions Used in This Book
+The following typographical conventions are used in this book:
+Italic
+Indicates new terms, URLs, email addresses, filenames, and file extensions.
+Constant width
+Used for program listings, as well as within paragraphs to refer to program elements
+such as variable or function names, databases, data types, environment variables,
+statements, and keywords.
+Constant width bold
+Shows commands or other text that should be typed literally by the user.
+Constant width italic
+Shows text that should be replaced with user-supplied values or by values deter‐
+mined by context.
+Throughout the code examples, we will use an ellipsis (…) to denote that some of the
+previously displayed content has been skipp
+How to Contact Us
+Please address comments and questions concerning this book to the publisher:
+O’Reilly Media, Inc.
+1005 Gravenstein Highway North
+Sebastopol, CA 95472
+800-998-9938 (in the United States or Canada)
+707-829-0515 (international or local)
+707-829-0104 (fax)
+We have a web page for this book, where we list errata, examples, and any additional
+information. You can access this page at http://www.oreilly.com/catalog/
+0636920032502.
+To comment or ask technical questions about this book, send email to
+lightweightdjango@gmail.com.
+For more information about our books, courses, conferences, and news, see our website
+at http://www.oreilly.com.
+Find us on Facebook: http://facebook.com/oreilly
+Follow us on Twitter: http://twitter.com/oreillymedia
+Watch us on YouTube: http://www.youtube.com/oreillymedia
+Acknowledgments
+There are numerous people to thank and without whom this book would not be possible.
+We received amazing support from our editor, Meghan Blanchette.
+Thank you to our technical reviewers—Aymeric Augustin, Jon Banafato, Barbara
+Shaurette, and Marie Selvanadin— for your comments, both positive and negative,
+which helped to shape and focus the book. Also thank you to Heather Scherer for shep‐
+herding the technical review.
+We are grateful to all the open source developers and contributors whose endless hours
+of work were needed to make these tools available for us to use and write about.
+Thank you to our early release readers for taking a chance on our unfinished work,
+dealing with typos and poor formatting, and giving feedback and correcting mistakes.
+Julia
+I would like to thank my wonderful family and close friends for their support throughout
+the course of writing this book. To my husband, Andrew, for believing in my abilities,
+and for his constant encouragement and steadfast support during this long and bumpy
+journey. To my daughter, Hannah, who is my inspiration and from whom I can always
+grow my strength every step of the way. To my mother, Katherine, for pushing me
+beyond what I ever thought I was capable of doing. To my stepfather, Tom, for teaching
+me how to use a cordless drill, changing the oil in my car, and instilling in me the value
+of hard work. Thank you to my brother, Alex, and sister, Elizabeth, for always cheering
+me on from the sidelines. Thank you to my best friend, Jenny, for her constant love and
+lifelong friendship.
+Also, thank you to my wonderful coauthor, Mark, for his brilliance and friendship; he
+is one of the most talented developers I have ever collaborated with. We made it to this
+finish line together, and I cannot imagine going through this book writing journey with
+anyone else.
+I’d also like to thank the Python community and a few specific members who have
+inspired, encouraged, and/or mentored me throughout my career: James Bennett, Sean
+Bleier, Nathan Borror, Colin Copeland, Matt Croydon, Katie Cunningham, Selena
+Deckelmann, Jacob Kaplan-Moss, Jessica McKellar, Jesse Noller, Christian Metts, Lynn
+Root, Caleb Smith, Paul Smith, Karen Tracey, Malcolm Tredinnick, Ben Turner, and
+Simon Willison.
+Mark
+First and foremost, this book would not be possible without the love and support of my
+family. My wife, Beth, and daughter, Kennedy, put up with long hours and a grumpier
+and more stressed version of me than they deserve. Also thanks to my brother, Matt,
+for his insight and early feedback. Thank you to my parents and my brother James for
+their lifetime of support.
+Thank you to my coauthor, Julia. Our collaboration is a celebration of our friendship
+and mutual respect. I will forever cherish our ability to work together to create some‐
+thing greater than the sum of our contributions.
+Finally, thank you to my coworkers at Caktus Group for your support in time, feedback,
+and encouragement.
+Before we dive in, this chapter is an outline of the knowledge and software requirements
+you’ll need to follow the examples in this book.
+Python
+This book is aimed at developers with at least some previous Python experience, and in
+this book we are using Python 3. In particular, the examples have been tested to run on
+Python 3.3 and 3.4. Those familiar enough with Python may be able to work through
+this book using Python 2.7, converting the example code as needed, though it is not
+recommended. To read more about what is new in these versions of Python and to find
+installation instructions for your system, visit https://www.python.org/downloads/.
+We expect that you have Python installed on your local development machine, know
+how to edit Python files, and know how to run them. Throughout this book, when we
+reference Python on the command line, we will use python, though some systems or
+installations may require using python3 or the full version, such as python3.3 or
+python3.4. Similarly, when installing new packages, the examples will use pip, though
+some installations may require using pip3. For this book, and Python development in
+general, it is recommended that you create an isolated Python environment for each
+project using virtualenv. Without an isolated environment, installing new Python
+packages with pip may require root access or administrative rights on your computer.
+We’ll assume that if this is the case, you will prefix the pip command with sudo or any
+other commands you may need to gain such rights, but those prefixes will not be shown
+in the examples.
+Python Packages
+The only Python package that is required before you start this book is Django. All of
+the examples have been tested and written to work with Django 1.7. It is recommended
+that you install with pip:
+hostname $ pip install Django==1.7
+As of August 2014, Django 1.7 was still in a release candidate phase.
+If the preceding installation does not work, you can install the 1.7 pre-
+release from the development branch with pip install https://
+github.com/django/django/archive/stable/1.7.x.zip.
+To read more about what is new in this version of Django, visit https://docs.djangopro
+ject.com/en/dev/releases/1.7/. For additional installation instructions, you can also see
+the Django guide on installation.
+Additional packages will be installed throughout the chapters. Chapters 1, 2, and 3 are
+each independent projects and can be treated as separate virtual environments, again
+with Django being the only prerequisite. Chapters 4 through 8 comprise one large
+project, and the same virtual environment should be used for those chapters.
+Web Development
+As Django is a web framework, this book assumes you have some basic knowledge of
+HTML and CSS. The JavaScript examples are more in depth, and the expected level of
+knowledge is detailed more in the following section. A basic understanding of the HTTP
+protocol, in particular the usage and purpose of the various HTTP verbs (GET, POST,
+PUT, DELETE, etc.), is helpful.
+JavaScript
+The later chapters in this book make heavy use of JavaScript. You should also be familiar
+with writing JavaScript/jQuery. A developer experienced doing DOM manipulation and
+making AJAX calls with jQuery should be able to follow the examples using Backbone.js.
+If you are familiar with another client-side framework such as Angular.js, Ember.js, or
+Knockout.js, you will be ahead of the game. This is not meant to be a definitive guide
+on Backbone.js. If you are not familiar with working with JavaScript, and Backbone.js
+MVC architecture in particular, here are some recommended O’Reilly titles for you to
+read:
