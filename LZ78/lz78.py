@@ -150,10 +150,7 @@ class Lz78:
             file.write("")
         with open(self.destination_file, "ba") as file:
             for x in self.utils.get_equal_parts(encoded_pairs, 50_000, len(encoded_pairs)):
-                try:
-                    file.write(self.get_bytes_to_write(x))
-                except:
-                    import pdb;pdb.set_trace()
+                file.write(self.get_bytes_to_write(x))
 
     def get_bytes_to_write(self, encoded_pairs):
         result = b''
